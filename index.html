@@ -61,7 +61,7 @@ var _Vue = new Vue({
       if(!$utils.supportES6()){
         alert('当前浏览器不受支持, 推荐: edge, chrome, firefox等现代浏览器'); return;
       }
-      $apitools.setAPIHost('http://gofs.api.' + location.hostname + ':810');
+      $apitools.setAPIHost('http://gofs.api.wup364.com:810');
       $userApi.login(this.loginform.user, this.loginform.password).then(function(data){
         $apitools.saveSession(JSON.parse(data));
         _Vue.$nextTick(function( ){

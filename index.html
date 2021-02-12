@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>登录-文件管理器</title>
+  <meta name="keywords" content="gofs,goFileService">
+  <meta name="description" content="gofs">
+  <script type="text/javascript" src="/lib/import-core.js?v=2020.08.09"></script>
+  <script type="text/javascript" src="/lib/apis/userapi.js?v=2020.08.09"></script>
+  <script type="text/javascript" src="/lib/3party_library/vector.js?v=2020.08.09"></script>
+</head>
+<style type="text/css">
+  .login-warp {
+    text-align: center;
+    font-size: 40px;
+    width: 350px;
+    background: #FFF;
+    z-index: 1;
+    position: absolute;
+    padding: 25px 15px;
+    border-radius: 5px
+  }
+</style>
+
+<body>
+  <div id="app" ref="app">
+    <div ref="loginwarp" class="login-warp"
+      :style="{'margin-top': loginform_margin_top+'px','margin-left': loginform_margin_left+'px'}"
+      @keyup.enter="handleSubmit">
+      <i-form:model="loginform">
+        <form-item><span style="font-size: 20px;color:#666;">登录系统</span></form-item>
+        <form-item>
+          <i-input type="text" v-model="loginform.user" placeholder="用户">
+            <Icon type="ios-person-outline" slot="prepend"></Icon>
+          </i-input>
+        </form-item>
+        <form-item prop="password">
+          <i-input type="password" v-model="loginform.password" placeholder="密码">
+            <Icon type="ios-lock-outline" slot="prepend"></Icon>
+          </i-input>
+        </form-item>
+        <form-item>
+          <i-button type="primary" @click="handleSubmit" style="width:100%;">登录</i-button>
+        </form-item>
+        </i-form>
+    </div>
+  </div>
+  <div id="bg" style="width: 100%;height: 100%;position: absolute;top: 0px;"></div>
+</body>
+<script  type="text/javascript">
+var _0x3c15=['doRenderbg',':810','catch','$Message','app','$refs','addEventListener','password','#app','登录失败','clientHeight','loginform_margin_left','loginwarp','hostname','clientWidth','href','location','parse','$nextTick'];var _0x143f=function(_0x3c1576,_0x143fa9){_0x3c1576=_0x3c1576-0x0;var _0x41a7d8=_0x3c15[_0x3c1576];return _0x41a7d8;};var V_Index=new Vue({'data':function(){return{'loginform_margin_top':0x64,'loginform_margin_left':0x64,'loginform':{'user':'','password':''},'message':'正在自动登录,请稍后...'};},'computed':{},'methods':{'handleSubmit':function(){$userApi['login'](this['loginform']['user'],this['loginform'][_0x143f('0x7')])['then'](function(_0x2f1ff2){$apitools['saveSession'](JSON[_0x143f('0x11')](_0x2f1ff2));V_Index[_0x143f('0x12')](function(){window[_0x143f('0x10')][_0x143f('0xf')]='./main.html';});})[_0x143f('0x2')](function(_0x137efc){V_Index[_0x143f('0x3')]['error'](_0x143f('0x9'));});},'doAutoHeight':function(_0x5d3764){var _0x53d278=this;this[_0x143f('0x12')](function(){if(_0x53d278[_0x143f('0x5')][_0x143f('0x4')]&&_0x53d278[_0x143f('0x5')]['loginwarp']){_0x53d278['loginform_margin_top']=_0x53d278['$refs'][_0x143f('0x4')]['clientHeight']/0x2-_0x53d278['$refs'][_0x143f('0xc')][_0x143f('0xa')]/0x2-0x32;_0x53d278[_0x143f('0xb')]=_0x53d278['$refs'][_0x143f('0x4')][_0x143f('0xe')]/0x2-_0x53d278['$refs'][_0x143f('0xc')]['clientWidth']/0x2;}});if(!_0x5d3764){window[_0x143f('0x6')]('resize',function(){_0x53d278['doAutoHeight'](!![]);});}},'doRenderbg':function(){var _0x252214=this;this['$nextTick'](function(){Victor('bg');});}},'created':function(){this['doAutoHeight']();this[_0x143f('0x0')]();},'watch':{}})['$mount'](_0x143f('0x8'));$apitools['setAPIHost']('http://gofs.api.'+location[_0x143f('0xd')]+_0x143f('0x1'));
+</script>
+
+</html>
